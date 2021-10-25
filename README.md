@@ -12,21 +12,31 @@
 
 <br>
 <br>
-<div id='P1'/>
-## Practica 1
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div id='P1>## Practica 1</div>
 
 Texto del primer apartado
