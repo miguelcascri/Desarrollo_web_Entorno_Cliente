@@ -9,8 +9,10 @@
 3. 
 ##Índice
 1. [Practica 1](#idP1)
-2. [Segundo apartado](#id2)
-<div id='P1' />
+
+<br>
+<br>
+<div id='P1'/>
 ## Practica 1
 
 
