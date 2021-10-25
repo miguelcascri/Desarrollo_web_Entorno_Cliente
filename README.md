@@ -9,17 +9,8 @@
 3. 
 ##Índice
 1. [Practica 1](#idP1)
-
+2. <a href='P1.md'>Practica 1</a> 
 <br>
-<br>
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
 
 <div id='P1/>## Practica 1
 
