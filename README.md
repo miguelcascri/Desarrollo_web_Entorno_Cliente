@@ -22,6 +22,6 @@
 <br><br>
 <
 
-<div id='P1>## Practica 1</div>
+<div id='P1/>## Practica 1
 
 Texto del primer apartado
