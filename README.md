@@ -12,17 +12,21 @@
 
 ### Sintaxis Markdown
 *cursiva*
+
 _cursiva_
+
 **negrita**
+
 __negrita__
+
 ***cursiva y negrita***
+
 ___cursiva y negrita___	
 
 ### Citas
 
 > ¿No te parece, que es una vergüenza para el hombre, que le suceda lo que a los más irracionales de los animales? — Socrates
 
-<br>
 ### Encabezados
 
 # Encabezado 1
