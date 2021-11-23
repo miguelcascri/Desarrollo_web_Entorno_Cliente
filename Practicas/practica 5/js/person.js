@@ -50,16 +50,4 @@
         else
             return true;
     }
-/*
-    correctAttributes() {
-        if (correctName() && correctSurname1() && correctSurname2())
-            return true;
-        else
-            return false;
-    }
-
-    toString() {
-        let info = "Esta persona se llama: " + this.nombre + " " + this.apellido1 + " " + this.apellido2+ ".";
-        return info;
-    }*/
 }
