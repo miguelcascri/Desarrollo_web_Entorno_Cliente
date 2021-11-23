@@ -7,7 +7,7 @@
 2. <a href= 'Practicas/P2.md'>Practica 2</a>
 3. <a href= 'Practicas/P3.md'>Practica 3</a>
 4. <a href= 'Practicas/P4.md'>Practica 4</a>
-5. <a href= 'Practicas/P5.md'>Practica 5</a>
+5. <a href= 'Practicas/practica 5/P5.md'>Practica 5</a>
 
 
 ### Sintaxis Markdown
