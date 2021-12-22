@@ -5,14 +5,18 @@
 
 <a href= '../README.md'>Pagina Principal</a>
 
+<a href= '../P6/'>Ficheros Practica 6</a>
 
 ### **Formulario de usuario**
+
+
+<img src="imagenes/form.png">
 
 En el formulario recogeremos el nombre apellidos, fecha de nacimiento, género, email y contraseña. Nombre y apellidos serán tipo "text", email será de tipo "email", genero será de tipo "radio", fecha de tipo "date" y contraseña de tipo "password"
 Enviaremos los datos a server.php mediante Post
 
 
-<img src="imagenes/form.png">
+
 
 	<form  name="recoger"  action="server.php"  method="post"  id="recoger">
 
@@ -166,6 +170,6 @@ Este fichero simplemente recoge los datos introducidos por el formulario y mostr
 		echo  "<br> <h5>Fecha de Nacimiento</h5>"  .  $fecha .  "<br>";
 	?>
     
-<a href= '../P6/'>Ficheros Practica 6</a>
+
     
 [Volver arriba](#Practica-6)
