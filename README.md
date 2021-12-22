@@ -3,7 +3,7 @@
 **Miguel Castilla Criado**
 
 ## Indice Practicas
-1. <a href='/Practicas/P1.md'>Practica 1</a> 
+1. <a href='/Practicas/P1.md'>Practica 1</a>
 2. <a href= 'Practicas/P2.md'>Practica 2</a>
 3. <a href= 'Practicas/P3.md'>Practica 3</a>
 4. <a href= 'Practicas/P4.md'>Practica 4</a>
@@ -22,7 +22,7 @@ __negrita__
 
 ***cursiva y negrita***
 
-___cursiva y negrita___	
+___cursiva y negrita___
 
 ### Citas
 
@@ -58,6 +58,3 @@ Solo se pueden usar numeros en estas listas.
     + Elemento 2
 2. Elemento 2
     * Elemento 1
-
-
-
