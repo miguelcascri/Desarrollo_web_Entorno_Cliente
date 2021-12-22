@@ -12,6 +12,8 @@ En el formulario recogeremos el nombre apellidos, fecha de nacimiento, género, 
 Enviaremos los datos a server.php mediante Post
 
 
+<img src="imagenes/form.png">
+
 	<form  name="recoger"  action="server.php"  method="post"  id="recoger">
 
 		<label  for="title"  id="title">
@@ -163,5 +165,7 @@ Este fichero simplemente recoge los datos introducidos por el formulario y mostr
 			}
 		echo  "<br> <h5>Fecha de Nacimiento</h5>"  .  $fecha .  "<br>";
 	?>
+    
+<a href= '../P6/'>Ficheros Practica 6</a>
     
 [Volver arriba](#Practica-6)
