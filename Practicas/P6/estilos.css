@@ -1,0 +1,80 @@
+body {
+    text-align: center;
+    background-color: deepskyblue;
+}
+
+#cuerpo {
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 30px;
+    background-color: whitesmoke;
+    margin-left: 35%;
+    margin-right: 35%;
+    box-shadow: 0px 10px 50px;
+}
+
+#enviar {
+    border-radius: 10px;
+    height: 40px;
+    background-color: rgba(43, 197, 184, 0.699);
+}
+
+#title {
+    margin-top: 10px;
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+.Intext {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.sexo {
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:invalid:required {
+    background-image: linear-gradient(to right, rgb(255, 214, 221), rgb(250, 140, 140));
+}
+
+input:valid:required {
+    border: 2px solid rgb(0, 110, 0);
+}
+
+input:valid {
+    border: 2px solid black;
+    
+}
+
+button {
+    margin-top: 30px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: rgba(43, 197, 184, 0.699);
+}
+
+img {
+    width: 30px;
+    height: 20px;
+}
+#mostrarpasswd{
+background-color: white;
+padding-bottom: 3px;
+
+}
+
+.botones{
+    margin-top: 30px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: rgba(43, 197, 184, 0.699);
+}
