@@ -3,7 +3,7 @@
 ### **INTERACCIÓN CON EL USUARIO**
 
 
-<a href= '../README.md'>Pagina Principal</a>
+<a href= '../../README.md'>Pagina Principal</a>
 
 <a href= '../P7/'>Ficheros Practica 7</a>
 
