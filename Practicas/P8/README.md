@@ -1,140 +1,148 @@
-# Practica 7
-##  Miguel Castilla Criado 
-### **INTERACCIÓN CON EL USUARIO**
+# Practica 8
 
+## Miguel Castilla Criado
+
+### **INTRO STAR WAR**
 
 <a href= '../Practicas/../README.md'>Pagina Principal</a>
 
 <a href= '../P8/'>Ficheros Practica 8</a>
 
-### **INTRO STAR WAR**
+### **Index.html**
+
+Este es el archivo en el que se encuentra el contenido a mostrar, con las clases necesarias y al final el audio de la intro.
+
+    <body>
+        <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+        <script src="app.js"></script>
+        <script type="text/javascript"></script>
+
+        <center>
+            <img src="imagenes/logo1.jpg" id="show">
+
+        </center>
+        <div class="container">
+            <div class="containerintro">
+                <h1 class="textointro">Episodio I <br><br> LA AMENAZA FANTASMA</h1>
+                <br>
+                <p>
+                    La República Galáctica está sumida en el caos. Los impuestos de las rutas comerciales a los sistemas
+                    estelares exteriores están en disputa.
+                </p>
+                <p>
+                    Esperando resolver el asunto con un bloqueo de poderosas naves de guerra, la codiciosa Federación de
+                    Comercio ha detenido todos los envíos al pequeño planeta de Naboo.
+                </p>
+                <p>
+                    Mientras el Congreso de la República debate interminablemente esta alarmante cadena de acontecimientos,
+                    el Canciller Supremo ha enviado en secreto a dos Caballeros Jedi, guardianes de la paz y la justicia en
+                    la galaxia, para resolver el conflicto....
+                </p>
+            </div>
+        </div>
+        <audio class="audio">
+            <source src="audio.mp3" onloadeddata="var audio = this; setTimeout(function(){audio.play();},2000)">
+        </audio>
+    </body>
+
+#### **Estilos.css**
+
+Este archivo contiene las variables y valores para darle estilos a las etiquetas del archivo index.html
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        background: #000 url('imagenes/galaxy.jpg') center;
+        font-size: 16px;
+        font-family: impact;
+        font-weight: 500;
+    }
+
+    .container {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        perspective: 500px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .containerintro {
+        top: 0%;
+        margin: auto;
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        font-size: 1.8em;
+        color: #e8be1e;
+        text-align: justify;
+        transform: rotateX(30deg) scale(2);
+    }
+
+    h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #primero{
+        size: 100%;
+    }
+
+#### **App.js**
+
+Este archivo contiene las funciones con las que se realiza la animacion.
+  
+
+    $(document).ready(function(){
+    setTimeout(function(){
+    inicio();
+    },3000);
+    scale();
+    setTimeout(function(){
+    	scale();
+    },3000);
+    });
+
+    var tamaño=3;
+    var posicion = 230;
+    var angulo = 60;
+    var altura =1;
+    var altura2 = 0.008;
+    var velocidad = 50;
+
+Esta  función realiza los cambios para que de el efecto de profundidad y sea continuo
+
+    function scale(){
+    tamaño = tamaño - altura2;
+    posicion = posicion -altura;
+    if(posicion<80){
+        altura = 0.4;
+        altura2 = 0.006;
+    }
+    if(posicion<40){
+        altura = 0.2;
+        altura2 = 0.003;
+    }
+    if(posicion<20){
+        altura = 0.1;
+        altura2 = 0.001;
+    }
+    $(".containerintro").css({'top' : posicion + "%","transform" : "rotateX(" + angulo + "deg) scale(" + tamaño + ")"})
+
+        if(posicion> -30){
+            setTimeout(scale,velocidad);
+        }else{
+            $('.containerintro').fadeTo(2000,0.5);
+        }
+
+    }
 
 
-En el formulario recogeremos el nombre a y contraseña. Nombre será de tipo "text"y contraseña de tipo "password"
-Enviaremos los datos a server.php mediante Post
-    
-    <form action="server.php" method="post">
-            <label for="title" id="title">
-                <h2>Completa el formulario</h2>
-            </label><br><br>
-            <label>
-                <h5>Introduce un nombre</h5>
-            </label><br>
-            <input class="Intext" type="text" name="name" placeholder="Nombre *" id="name" required><br>
-            <label>
-                <h5>Introduce una contraseña</h5>
-            </label><br>
-            <input class="Intext" type="password" name="password" id="password" placeholder="Contraseña *" required
-                onmousemove="Mayus()">
-            <button id="mostrarpasswd" type=button onclick="mostrarContraseña()" value="Mostrar Contraseña"><img
-                    src="imagenes/mostrar.png"></button><br>
-            <input class="botones" type="submit" value="Enviar">
-            <input type="button" id="reset" ondblclick="Restablecer()" onclick="Permisos()"
-                value="Has olvidado tu contraseña">
-        </form>
+    function inicio() {
+    $('#show').fadeOut(2000);
+    }
 
-
-
-	
-
-### **Funciones**
-
-#### **Mostrar Contraseña**
-
-Esta funcion se ejecuta al pulsar el botón al lado de la contraseña en el formulario.
-Si lo pulsamos y está en tipo password se pasará a tipo text pudiendo ver los escrito de esta forma y viceversa
-	
-    function  mostrarContraseña()  {
-
-		var mostrar = document.getElementById("password");
-		if  (mostrar.type ==  "password")  {
-			mostrar.type =  "text";
-		}  else  {
-			mostrar.type =  "password";
-			}
-	}
-    
-#### **Restablecer y Permisos**
-
-La función Restablecer indica que si el boton de "Has olvidado tu contraseña" es clicado una vez salte una alerta que indique que no
-tienes permisos para realizar esta accion, cuenta con un setTimeout con el que permitimos que se pueda dar doble clic y funcione ya 
-que no se ejecutará la función hasta que no pase el tiempo indicado. La función Permisos hace que al dar dos click en "Has olvidado tu contraseña"
-redireccione al enlace indicado.
-	  
-      window.onload = function () {
-                var contador;
-                var element = document.getElementById('reset');
-
-                element.onclick = function (Restablecer) {
-                    contador = setTimeout(function () { alert("No tienes permisos para restablecer la contraseña"); }, 250);
-                }
-
-                element.ondblclick = function (Permisos) {
-                    clearTimeout(contador);
-                    window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-                }
-            }
-            
-#### **Resolución de ventana**
-
-Esta funcion nos mostrará el tamaño de la ventana al momento, es decir, al redimensionarlar se actualizará con cada cambio.
-Mediante clientWidth obtenemos el ancho y con clientHeight se obtiene el alto de la ventana.
-	  
-      tamaño();
-        window.addEventListener('resize', tamaño);
-
-        function tamaño() {
-            document.getElementById('ancho').innerText = document.documentElement.clientWidth;
-            document.getElementById('alto').innerText = document.documentElement.clientHeight;
-        }     
-            
-
-Para mostrarlo por pantalla realizamos el siguiente codigo
-    
-    <span id="ancho"></span>
-    <span>x</span>
-    <span id="alto"></span><br>
-    
-
-#### **Mayusculas Activadas**
-Esta funcion detecta si la tecla de CapsLock esta activada, en caso de estarlo mientras el cursor está en el campo de texto de la
-contraseña mostrará un aviso de "Mayusculas activadas" si están desactivadas no mostrará nada.
-
-    function Mayus() {
-
-                let eleID = document.getElementById('password');
-                eleID.addEventListener('keyup', function (event) {
-                    if (event.getModifierState('CapsLock')) {
-                        document.getElementById('blocmayus').innerText = "Mayusculas activadas";
-                    } else {
-                        document.getElementById('blocmayus').innerText = " ";
-                    }
-
-
-                }
-                );
-            }
-
-
-
-### **Server.php**
-
-Este fichero simplemente recoge los datos introducidos por el formulario y mostrarlos por pantalla
-
-    <div id="cuerpo">
-        <h2>Datos de Usuario</h2>
-
-        <?php
-            error_reporting(0);
-            $nombre = $_POST['name'];
-            $contraseña = $_POST["password"];
-
-            echo "<h4>Nombre y apellidos</h4>" .  $nombre . "<br>";
-            echo "<br> <h5>Contraseña </h5>" . $contraseña . "<br>";
-        ?>
-        <a href="index.html"><button class="botones">Volver a la pagina de inicio</button> </a>
-    </div>
-	
-    
 
 [Volver arriba](#Practica-8)
