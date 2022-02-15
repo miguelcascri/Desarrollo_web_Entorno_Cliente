@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="estilos.css" type="text/css" rel="stylesheet">
+  <title>P9 MIGUEL CASTILLA CRIADO</title>
+</head>
+
+<body>
+  <div class="baresmap">
+    <div class="map"></div>
+    <div class="bares"></div>
+  </div>
+  <div class="content">
+    <div class="divarena">
+        <div class="medacarena">
+            <div class="arena"></div>
+        </div>   
+    </div>
+    <div class="divcordoba">
+       <div class="medaccordoba">
+           <div class="cordoba"></div>
+        </div>    
+    </div> 
+  </div>
+  
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        url: "escritora.xml",
+        dataType: "xml",
+        success: function (escritora) {
+          $(escritora)
+            .find("centro")
+            .each(function () {
+              nombre = $(this).find("nombre").text();
+              direccion = $(this).find("direccion").text();
+              latitud = $(this).find("latitud").text();
+              longitud = $(this).find("longitud").text();
+
+              $(".cordoba").append(
+                "<div><p class='datoscentro'><b>Nombre: </b>" + nombre +"<p>" +
+                "<p class='datoscentro'><b>Direccion: </b>" +direccion +"</p>" +
+                "<p class='datoscentro'><b>Latitud: </b>" + latitud +"</p>" +
+                "<p class='datoscentro'><b>Longitud: </b>" +longitud +`</p>
+                <button class='ButtonEscritora  value='bares'>MOSTRAR BARES</button>
+                </div>`
+              );
+            });
+        },
+      });
+
+      $(document).on("click", ".ButtonEscritora", function () {
+        $(".bares").empty();
+        mostrar = $.ajax({
+          type: "GET",
+          url: "baresCordoba.xml",
+          dataType: "xml",
+          success: function (bares) {
+            $(bares)
+              .find("bar")
+              .each(function () {
+                centro = $(this).find("centro").text();
+                nombre = $(this).find("nombre").text();
+                direccion = $(this).find("direccion").text();
+                latitud = $(this).find("latitud").text();
+                longitud = $(this).find("longitud").text();
+                puntuacion = $(this).find("puntuacion").text();
+
+                $(".bares").append(
+                  "<div class='datosbar'><p class=''><b>Nombre: </b>" +nombre +"</p>" +
+                  "<p class='datosbar'><b>Direccion: </b>" +direccion +"</p>" +
+                  "<p class='datosbar'><b>Latitud: </b>" +latitud +"</p>" +
+                  "<p class='datosbar'><b>Longitud: </b>" +longitud +"</p>" +
+                  "<p class='datosbar'><b>Puntuacion: </b>" +puntuacion +"</p><br>"
+                );
+              });
+            $(".map").empty();
+            $(".map").append(
+              `<img class="rounded-2xl" width="600" src="https://maps.googleapis.com/maps/api/staticmap?center=MEDAC_Cordoba&zoom=17&scale=1&size=600x300&maptype=roadmap&key=AIzaSyCe6vLtNKcC6H585-oKcNXXUDA2fOALEs8&format=png&visual_refresh=true" alt="Google Map of MEDAC Arena">`
+            );
+          },
+        });
+      });
+    });
+      
+      //OTRO MEDAC
+      
+      
+      
+      $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        url: "arena.xml",
+        dataType: "xml",
+        success: function (arena) {
+          $(arena)
+            .find("centro")
+            .each(function () {
+              nombre = $(this).find("nombre").text();
+              direccion = $(this).find("direccion").text();
+              latitud = $(this).find("latitud").text();
+              longitud = $(this).find("longitud").text();
+
+              $(".arena").append(
+                "<div><p class='datoscentro'><b>Nombre: </b>" + nombre +"<p>" +
+                "<p class='datoscentro'><b>Direccion: </b>" +direccion +"</p>" +
+                "<p class='datoscentro'><b>Latitud: </b>" + latitud +"</p>" +
+                "<p class='datoscentro'><b>Longitud: </b>" +longitud +`</p>
+                <button class='ButtonArena value='bares'>MOSTRAR BARES</button>
+                </div>`
+              );
+            });
+        },
+      });
+
+     
+
+      $(document).on("click", ".ButtonArena", function () {
+        $(".bares").empty();
+        mostrar = $.ajax({
+          type: "GET",
+          url: "baresArena.xml",
+          dataType: "xml",
+          success: function (bares) {
+            $(bares)
+              .find("bar")
+              .each(function () {
+                centro = $(this).find("centro").text();
+                nombre = $(this).find("nombre").text();
+                direccion = $(this).find("direccion").text();
+                latitud = $(this).find("latitud").text();
+                longitud = $(this).find("longitud").text();
+                puntuacion = $(this).find("puntuacion").text();
+
+                $(".bares").append(
+                  "<div class='datosbar'><p class=''><b>Nombre: </b>" +nombre +"</p>" +
+                  "<p class='datosbar'><b>Direccion: </b>" +direccion +"</p>" +
+                  "<p class='datosbar'><b>Latitud: </b>" +latitud +"</p>" +
+                  "<p class='datosbar'><b>Longitud: </b>" +longitud +"</p>" +
+                  "<p class='datosbar'><b>Puntuacion: </b>" +puntuacion +"</p><br>"
+                );
+              });
+            $(".map").empty();
+            $(".map").append(
+              `<img class="rounded-2xl" width="600" src="https://maps.googleapis.com/maps/api/staticmap?center=MEDAC_Arena&zoom=17&scale=1&size=600x300&maptype=roadmap&key=AIzaSyCe6vLtNKcC6H585-oKcNXXUDA2fOALEs8&format=png&visual_refresh=true" alt="Google Map of MEDAC Arena">`
+            );
+          },
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

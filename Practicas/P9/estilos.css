@@ -1,0 +1,70 @@
+body{
+    background-color: gainsboro;
+    font-family: arial;
+    color: black;
+}
+.contenido {
+    background-color: aqua;
+}
+
+.listado {
+    background-color: beige;
+}
+
+.medaccordoba {
+    background-color:rgba(42, 34, 34, 0.54);
+    color: white;
+    width: 513px;
+    height: 300px;
+}
+
+.medacarena {
+    background-color:rgba(42, 34, 34, 0.54);
+    color: white;
+    width: 513px;
+    height: 75%;
+}
+
+.map {
+    
+}
+
+.centrosmedac {
+    display: inline;
+}
+
+.divarena {
+    background-image: url(fondo1.png);
+    background-repeat: no-repeat;
+    opacity: 10;
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+
+.arena {
+    padding-top: 150px;
+    padding-left: 50px;
+}
+
+.divcordoba {
+    background-image:url(fondo2.jpg);
+    background-repeat: no-repeat;
+    width: 33%;
+    height: 300px;
+    display: block;
+}
+
+.cordoba {
+    padding-top: 80px;
+    padding-left: 50px;
+}
+
+.baresmap {
+    display: block;
+    float: right;
+}
+
+.content {
+    margin-left: 10%;
+}
