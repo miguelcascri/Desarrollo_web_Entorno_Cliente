@@ -68,3 +68,20 @@ body{
 .content {
     margin-left: 10%;
 }
+
+.ButtonArena{
+    background-color: cornflowerblue;
+    border-style: solid;
+    border-color:black;
+    border-radius: 20px;
+    width: 300px;
+    height: 30px;
+}
+.ButtonEscritora{
+    background-color: cornflowerblue;
+    border-style: solid;
+    border-color:black;
+    border-radius: 20px;
+    width: 300px;
+    height: 30px;
+}
