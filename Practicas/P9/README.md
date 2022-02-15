@@ -1,7 +1,5 @@
 # Practica 9
 ##  Miguel Castilla Criado 
-### ****
-
 
 <a href= '../README.md'>Pagina Principal</a>
 
